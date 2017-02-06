@@ -1,0 +1,22 @@
+body{
+	font-family: "Roboto", sans-serif;
+	color: #333;
+}
+img{
+	max-width: 100%;
+	height: auto;
+}
+*{
+	box-sizing: border-box;
+}
+
+a{
+	color: $mainOrange;
+}
+.centered {
+	text-align: center;
+}
+
+.light{
+	font-weight: 100;
+}

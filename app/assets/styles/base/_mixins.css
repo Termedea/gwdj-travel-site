@@ -1,0 +1,24 @@
+@define-mixin atSmall{
+	@media (min-width: $smallScreen){
+		@mixin-content;
+	}
+}
+
+@define-mixin atMedium{
+	@media (min-width: $mediumScreen){
+		@mixin-content;
+	}
+}
+@define-mixin atLarge{
+	@media (min-width: $largeScreen){
+		@mixin-content;
+	}
+}
+
+@define-mixin clearFix{
+	&::after{
+		content: "";
+		clear: both;
+		display: table;
+	}
+}
