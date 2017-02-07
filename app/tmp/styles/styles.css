@@ -1096,4 +1096,51 @@ a{
   }
 }
 
+.site-header{
+	position: absolute;
+	width: 100%;
+	z-index: 2;
+	background-color: rgba(47,85,114, .3);
+	padding: 10px 0;
+}
+
+.site-header__btn-container{
+  float: right;
+}
+
+.site-header__logo{
+  position: absolute;
+  background-color: #2f5572;
+  padding: 25px 36px;
+  top: 0;
+}
+
+.primary-nav ul{
+  margin: 0;
+  padding: 0;
+}
+
+.primary-nav ul::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.primary-nav li{
+  list-style: none;
+  float: left;
+  padding-right: 20px;
+}
+
+.primary-nav a{
+  color: #fff;
+  text-decoration: none;
+  font-weight: 300;
+  padding: 5px 0;
+}
+
+.primary-nav--pull-right{
+  float: right;
+}
+
 

@@ -9,7 +9,7 @@ gulp.task("watch", function(){
 		server:{
 			baseDir: "app"
 		},
-		notify: false
+		notify: false; 
 	});
 
 	watch("./app/index.html", function(){
