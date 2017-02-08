@@ -13,7 +13,7 @@ gulp.task("styles", function(){
 	return gulp.src("./app/assets/styles/styles.css")
 				.pipe(postCSS([cssImport, cssMixins, cssVars, cssNested, cssHexRGBA, autoprefixer]))
 				.on("error", function(err){
-					console.log("An error occured \n" +err.toString());
+					console.log("A CSS error occurred \n" +err.toString());
 					this.emit("end");
 				})
 				.pipe(gulp.dest("./app/tmp/styles"));
