@@ -73,31 +73,49 @@
 "use strict";
 
 
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _jquery = __webpack_require__(1);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var Person = function () {
-	function Person(name, favColor) {
-		_classCallCheck(this, Person);
+var MobileMenu = function () {
+	function MobileMenu() {
+		_classCallCheck(this, MobileMenu);
 
-		this.name = name;
-		this.favColor = favColor;
+		this.siteHeader = (0, _jquery2.default)(".site-header");
+		this.menuIcon = (0, _jquery2.default)(".site-header__menu-icon");
+		this.menuContent = (0, _jquery2.default)(".site-header__menu-content");
+
+		this.events();
 	}
 
-	_createClass(Person, [{
-		key: "greet",
-		value: function greet() {
-			console.log("Hi there, my name is " + this.name + " and my favorite color is " + this.favColor);
+	_createClass(MobileMenu, [{
+		key: "events",
+		value: function events() {
+			//needs to bind 'this' to the toggle menu so that the callback know that 'this' refers to this object. 
+			this.menuIcon.click(this.toggleMenu.bind(this));
+		}
+	}, {
+		key: "toggleMenu",
+		value: function toggleMenu() {
+			this.menuContent.toggleClass("site-header__menu-content--is-visible");
+			this.siteHeader.toggleClass("site-header--is-expanded");
 		}
 	}]);
 
-	return Person;
+	return MobileMenu;
 }();
 
-;
-
-module.exports = Person;
+exports.default = MobileMenu;
 
 /***/ }),
 /* 1 */
@@ -10333,14 +10351,13 @@ return jQuery;
 "use strict";
 
 
-var Person = __webpack_require__(0);
-var $ = __webpack_require__(1);
+var _MobileMenu = __webpack_require__(0);
 
-var john = new Person("John", "blue");
-var jane = new Person("Jane", "green");
+var _MobileMenu2 = _interopRequireDefault(_MobileMenu);
 
-john.greet();
-jane.greet();
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var mobileMenu = new _MobileMenu2.default();
 
 /***/ })
 /******/ ]);
