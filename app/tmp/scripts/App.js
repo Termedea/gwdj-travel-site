@@ -11215,10 +11215,10 @@ var StickyHeader = function () {
 		this.headerTriggerElement = (0, _jquery2.default)(".large-hero__title");
 		this.pageSections = (0, _jquery2.default)(".page-section");
 		this.headerLinks = (0, _jquery2.default)(".primary-nav a");
+		this.resetPageSectionWaypoints();
 		this.createHeaderWaypoint();
 		this.createPageSectionWaypoints("down", "18%");
 		this.createPageSectionWaypoints("up", "-40%");
-		this.resetPageSectionWaypoints();
 		this.addSmoothScrolling();
 	}
 
@@ -11230,7 +11230,6 @@ var StickyHeader = function () {
 	}, {
 		key: "createHeaderWaypoint",
 		value: function createHeaderWaypoint() {
-
 			var obj = this;
 			new Waypoint({
 				element: obj.headerTriggerElement[0],
@@ -11246,6 +11245,7 @@ var StickyHeader = function () {
 	}, {
 		key: "resetPageSectionWaypoints",
 		value: function resetPageSectionWaypoints() {
+			this.headerLinks.removeClass("is-current-link");
 			var obj = this;
 			new Waypoint({
 				element: obj.headerTriggerElement[0],
