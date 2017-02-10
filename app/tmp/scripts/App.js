@@ -11218,6 +11218,7 @@ var StickyHeader = function () {
 		this.createHeaderWaypoint();
 		this.createPageSectionWaypoints("down", "18%");
 		this.createPageSectionWaypoints("up", "-40%");
+		this.resetPageSectionWaypoints();
 		this.addSmoothScrolling();
 	}
 
@@ -11237,10 +11238,23 @@ var StickyHeader = function () {
 					if (direction == "down") {
 						obj.siteHeader.addClass("site-header--dark");
 					} else {
-						obj.headerLinks.removeClass("is-current-link");
 						obj.siteHeader.removeClass("site-header--dark");
 					}
 				}
+			});
+		}
+	}, {
+		key: "resetPageSectionWaypoints",
+		value: function resetPageSectionWaypoints() {
+			var obj = this;
+			new Waypoint({
+				element: obj.headerTriggerElement[0],
+				handler: function handler(direction) {
+					if (direction == "up") {
+						obj.headerLinks.removeClass("is-current-link");
+					}
+				},
+				offset: "-30%"
 			});
 		}
 	}, {
