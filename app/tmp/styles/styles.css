@@ -1405,6 +1405,10 @@ a{
 	bottom: 0;
 	left: 0;
 	right: 0;
+	-webkit-transform: scale(1.2);
+	        transform: scale(1.2);
+	-webkit-transition: all .3s ease-out;
+	transition: all .3s ease-out;
 
 
 }
@@ -1436,6 +1440,13 @@ a{
 
 .modal__close:hover{
   color: #d59541;
+}
+
+.modal--is-visible{
+  opacity: 1;
+  visibility: visible;
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
 .social-icons{
